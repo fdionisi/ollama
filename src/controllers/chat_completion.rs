@@ -29,17 +29,17 @@ impl Ollama {
 
 #[derive(serde::Serialize)]
 pub struct ChatRequest {
-    model: String,
-    messages: Vec<ChatMessage>,
+    pub model: String,
+    pub messages: Vec<ChatMessage>,
     #[serde(skip_serializing_if = "Option::is_none")]
-    tools: Option<Vec<serde_json::Value>>,
+    pub tools: Option<Vec<serde_json::Value>>,
     #[serde(skip_serializing_if = "Option::is_none")]
-    format: Option<serde_json::Value>,
+    pub format: Option<serde_json::Value>,
     #[serde(skip_serializing_if = "Option::is_none")]
-    options: Option<serde_json::Value>,
-    stream: bool,
+    pub options: Option<serde_json::Value>,
+    pub stream: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
-    keep_alive: Option<String>,
+    pub keep_alive: Option<String>,
 }
 
 pub struct ChatResponse(Pin<Box<dyn Stream<Item = Result<ChatEvent>> + Send>>);

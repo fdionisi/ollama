@@ -27,11 +27,11 @@ impl Ollama {
 
 #[derive(serde::Serialize)]
 pub struct GenerateRequest {
-    model: String,
-    prompt: String,
+    pub model: String,
+    pub prompt: String,
     #[serde(skip_serializing_if = "Option::is_none")]
-    options: Option<serde_json::Value>,
-    stream: bool,
+    pub options: Option<serde_json::Value>,
+    pub stream: bool,
 }
 
 pub struct GenerateResponse(Pin<Box<dyn Stream<Item = Result<GenerateEvent>> + Send>>);

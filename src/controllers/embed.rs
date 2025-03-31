@@ -23,14 +23,14 @@ impl Ollama {
 
 #[derive(serde::Serialize)]
 pub struct EmbedRequest {
-    model: String,
-    input: EmbedInput,
+    pub model: String,
+    pub input: EmbedInput,
     #[serde(skip_serializing_if = "Option::is_none")]
-    truncate: Option<bool>,
+    pub truncate: Option<bool>,
     #[serde(skip_serializing_if = "Option::is_none")]
-    options: Option<serde_json::Value>,
+    pub options: Option<serde_json::Value>,
     #[serde(skip_serializing_if = "Option::is_none")]
-    keep_alive: Option<String>,
+    pub keep_alive: Option<String>,
 }
 
 #[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]

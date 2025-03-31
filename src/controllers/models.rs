@@ -138,9 +138,9 @@ impl Extend<PullModelEvent> for PullModelEvent {
 
 #[derive(Clone, Debug, serde::Serialize)]
 struct PullModelRequest {
-    name: String,
-    insecure: bool,
-    stream: bool,
+    pub name: String,
+    pub insecure: bool,
+    pub stream: bool,
 }
 
 #[derive(Debug, Default, Clone, serde::Deserialize)]
